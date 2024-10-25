@@ -1,5 +1,5 @@
 import Login from "./Auth/login";
-import Logout from "./Auth/logout";
+// import Logout from "./Auth/logout";
 import { useEffect } from "react";
 import { gapi } from 'gapi-script';
 
@@ -18,7 +18,6 @@ function Portal() {
     return (
         <div>
             <Login/>
-            <Logout/>
         </div>
     );
 }
