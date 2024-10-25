@@ -1,61 +1,24 @@
-import { useState, useEffect } from 'react';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
-import axios from 'axios';
+import Login from "./Auth/login";
+import Logout from "./Auth/logout";
+import { useEffect } from "react";
+import { gapi } from 'gapi-script';
 
 function Portal() {
-    const [ user, setUser ] = useState([]);
-    const [ profile, setProfile ] = useState([]);
-
-    const login = useGoogleLogin({
-        onSuccess: (codeResponse) => setUser(codeResponse),
-        onError: (error) => console.log('Login Failed:', error)
+    const clientId = "940076628954-lf7kegiepgj5cpk6ddija1q340rsabhp.apps.googleusercontent.com"
+    useEffect(() => {
+        function start(){
+            gapi.client.init({
+                clientId: clientId,
+                scope: ""})
+            
+        }
+        gapi.load('client:auth2', start);
     });
-
-    useEffect(
-        () => {
-            if (user) {
-                console.log(user)
-                console.log(user.access_token)
-                axios
-                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-                        headers: {
-                            Authorization: `Bearer ${user.access_token}`,
-                            Accept: 'application/json'
-                        }
-                    })
-                    .then((res) => {
-                        setProfile(res.data);
-                    })
-                    .catch((err) => console.log(err));
-            }
-        },
-        [ user ]
-    );
-
-    // log out function to log the user out of google and set the profile array to null
-    const logOut = () => {
-        googleLogout();
-        setProfile(null);
-    };
 
     return (
         <div>
-            <h2>User Page</h2>
-            <br />
-            <br />
-            {profile ? (
-                <div>
-                    <img src={profile.picture} alt="user image" />
-                    <h3>User Logged in</h3>
-                    <p>Name: {profile.name}</p>
-                    <p>Email Address: {profile.email}</p>
-                    <br />
-                    <br />
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={logOut}>Log Out</button>
-                </div>
-            ) : (
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={login}>Log In </button>
-            )}
+            <Login/>
+            <Logout/>
         </div>
     );
 }
