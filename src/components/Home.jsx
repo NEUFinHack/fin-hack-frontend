@@ -1,4 +1,4 @@
-import Navbar from "./NavBar";
+// import Navbar from "./NavBar";
 import About from "./Pages/About";
 import Tracks from "./Pages/Tracks";
 import Faq from "./Pages/Faq";
@@ -8,7 +8,7 @@ import Title from "./Pages/Title";
 function Home() {
   return (
     <div>
-         <Navbar/>
+         {/* <Navbar/> */}
          <Title/>
          <About/>
          <Tracks/>

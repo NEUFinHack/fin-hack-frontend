@@ -14,6 +14,8 @@ function App() {
             <Route path="/portal" element={<Portal />} />
             </Routes>
           </Router>
+
+          
         </GoogleOAuthProvider>
       </div>
       
