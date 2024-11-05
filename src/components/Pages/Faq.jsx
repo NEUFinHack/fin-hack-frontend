@@ -1,6 +1,5 @@
 
 import { Accordion } from 'react-bootstrap'
-import { ChevronDown } from 'lucide-react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function Faq() {
@@ -99,7 +98,6 @@ export default function Faq() {
                       <span className="text-[#0a1628] font-medium flex-grow text-left">
                         {item.question}
                       </span>
-                      <ChevronDown className="h-5 w-5 text-[#0a1628] flex-shrink-0" />
                     </div>
                   </Accordion.Header>
                   <Accordion.Body className="px-4 py-3 text-[#0a1628]/80">
