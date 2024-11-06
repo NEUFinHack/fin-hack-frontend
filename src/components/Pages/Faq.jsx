@@ -6,43 +6,53 @@ export default function Faq() {
   const faqItems = [
     {
       question: "What is FinHack?",
-      answer: "FinHack is a finance-themed hackathon that brings together innovators to solve challenges in the financial technology sector.",
+      answer: "FinHack is a 24-hour hackathon focused on financial technology innovation where students from around the world collaborate to build cutting-edge projects.",
       status: "green"
     },
     {
       question: "When and Where is FinHack?",
-      answer: "FinHack takes place from February 11-13, 2024. The venue details will be shared with registered participants.",
+      answer: "The event will take place at Northeastern Boston Campus on January 18-19",
       status: "green"
     },
     {
       question: "Who can attend?",
-      answer: "FinHack is open to students, professionals, and anyone interested in fintech innovation. Participants must be 18 or older.",
+      answer: "Current college undergraduates are eligible to participate. Students must be enrolled during the 2024-2025 academic year.",
       status: "red"
     },
     {
       question: "How do teams work?",
-      answer: "Teams can consist of 2-4 members. You can form your own team or join one during the team formation event.",
+      answer: "Teams can have up to 4 members. You can form teams before or during the event through our team formation activities.",
       status: "green"
     },
     {
       question: "How much does it cost?",
-      answer: "There is a nominal registration fee. Early bird discounts are available. Check the registration page for current pricing.",
+      answer: "The event is completely free! This includes meals, snacks, workshops, mentorship, and swag for all participants.",
       status: "red"
     },
     {
       question: "What should I bring?",
-      answer: "Bring your laptop, charger, and any other devices you need. We'll provide food, drinks, and workspace.",
+      answer: "Bring your laptop, charger, personal toiletries, and any other things you need. Sleeping bag is optional.",
       status: "green"
     },
     {
       question: "When are applications due?",
-      answer: "Applications close two weeks before the event. Early applications are encouraged as space is limited.",
+      answer: "12/20/2024  11:59 PM PST",
       status: "green"
     },
     {
-      question: "Do I need coding Experience?",
-      answer: "While coding experience is helpful, we welcome participants with diverse skills including design, business, and finance.",
+      question: "Will food be provided?",
+      answer: "Yes! We provide all meals from Saturday breakfast through Sunday lunch, including snacks and beverages. Dietary restrictions will be accommodated.",
       status: "red"
+    },
+    {
+      question: "Do I need coding Experience?",
+      answer: "While coding experience is helpful, we welcome participants with diverse skills including design, business, and finance. We will also provide workshops and mentorship to help beginners. ",
+      status: "green"
+    },
+    {
+      question: "Additional Questions?",
+      answer: "Email us at NUFintech@gmail.com for any other questions or concerns.",
+      status: "green"
     }
   ]
 
@@ -68,7 +78,7 @@ export default function Faq() {
       </div>
 
       {/* Content */}
-      <div className="relative min-h-screen flex items-center justify-center px-4">
+      <div className="relative flex items-center justify-center px-4">
         <div className="relative w-full max-w-2xl">
           {/* Outer glass card */}
           <div className="absolute inset-2 bg-white/20 backdrop-blur-sm rounded-lg" />
@@ -79,7 +89,7 @@ export default function Faq() {
               FAQ
             </h1>
             
-            <Accordion className="space-y-3">
+            <Accordion className="space-y-4">
               {faqItems.map((item, index) => (
                 <Accordion.Item 
                   key={index} 
@@ -87,12 +97,12 @@ export default function Faq() {
                   className="border-0 rounded-lg bg-white/50 backdrop-blur-sm overflow-hidden"
                 >
                   <Accordion.Header className="p-0">
-                    <div className="flex items-center gap-3 px-4 py-3 w-full">
+                    <div className="flex items-center gap-3 px-4 py-1 w-full">
                       <div
-                        className={`w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent ${
+                        className={`w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent ${
                           item.status === 'green'
-                            ? 'border-b-[8px] border-b-[#c5f82a]'
-                            : 'border-t-[8px] border-t-red-500'
+                            ? 'border-b-[10px] border-b-[#c5f82a]'
+                            : 'border-t-[10px] border-t-red-500'
                         }`}
                       />
                       <span className="text-[#0a1628] font-medium flex-grow text-left">

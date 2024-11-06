@@ -8,40 +8,40 @@ const sponsors = [
   {
     id: 1,
     name: "IRT",
-    logo: "/placeholder.svg?height=60&width=120",
+    logo: "/src/assets/HRT.png",
   },
   {
     id: 2,
     name: "Fidelity Investments",
-    logo: "/placeholder.svg?height=60&width=180",
+    logo: "/src/assets/Fidelity.png",
   },
   {
     id: 3,
     name: "JPMorgan Chase & Co.",
-    logo: "/placeholder.svg?height=60&width=200",
+    logo: "/src/assets/JP Morgan Chase Logo.png",
   },
   {
     id: 4,
     name: "Google",
-    logo: "/placeholder.svg?height=60&width=160",
+    logo: "/src/assets/Google.jpg",
   },
   {
     id: 5,
     name: "Microsoft",
-    logo: "/placeholder.svg?height=60&width=160",
+    logo: "/src/assets/microsoft.png",
   },
   {
     id: 6,
     name: "Apple",
-    logo: "/placeholder.svg?height=60&width=140",
+    logo: "/src/assets/apple.png",
   }
 ]
 
 export default function Sponsors() {
   return (
-    <div className="min-h-screen bg-[#0a1628] flex items-center justify-center p-4 md:p-8">
-      <Card className="w-full max-w-5xl bg-gray-200/90 backdrop-blur-sm p-6 shadow-xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+    <div className="w-full bg-[#0a1628] flex items-center justify-center p-4 md:p-8">
+      <Card className="w-full max-w-5xl bg-gray-200/30 backdrop-blur-sm  shadow-xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-8">
           SPONSORS
         </h2>
         <Marquee
@@ -53,7 +53,7 @@ export default function Sponsors() {
           {sponsors.map((sponsor) => (
             <div
               key={sponsor.id}
-              className="mx-8 bg-white rounded-lg p-4 shadow-md flex items-center justify-center min-w-[200px] h-[100px]"
+              className="mx-8 bg-white rounded-lg p-2 shadow-md flex items-center justify-center min-w-[240px] h-[160px]"
             >
               <img
                 src={sponsor.logo}
