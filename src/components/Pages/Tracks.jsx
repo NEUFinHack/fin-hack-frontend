@@ -48,7 +48,7 @@ export default function Tracks() {
       </div>
 
       {/* Content */}
-      <div className="relative min-h-screen flex items-center justify-center px-4">
+      <section id="tracks" className="relative min-h-screen flex items-center justify-center px-4">
         <div className="relative w-full max-w-2xl">
           {/* Outer glass card */}
           <div className="absolute inset-2 bg-white/20 backdrop-blur-sm rounded-lg" />
@@ -88,7 +88,7 @@ export default function Tracks() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

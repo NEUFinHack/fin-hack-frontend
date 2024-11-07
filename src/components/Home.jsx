@@ -9,12 +9,12 @@ function Home() {
   return (
     <div>
          {/* <Navbar/> */}
-         <Title/>
-         <About/>
-         <Tracks/>
-         <Faq/>
-         <Speakers/>
-         <Sponsors/>
+         <Title id="#title"/>
+         <About id="#about"/>
+         <Tracks id="#tracks"/>
+         <Faq id="#faq"/>
+         <Speakers id="#speakers"/>
+         <Sponsors id="#sponsors"/>
     </div>
     
 );

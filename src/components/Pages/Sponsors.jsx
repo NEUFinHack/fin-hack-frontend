@@ -39,8 +39,8 @@ const sponsors = [
 
 export default function Sponsors() {
   return (
-    <div className="w-full bg-[#0a1628] flex items-center justify-center p-4 md:p-8">
-      <Card className="w-full max-w-5xl bg-gray-200/30 backdrop-blur-sm  shadow-xl">
+    <section id="sponsors" className="w-full bg-[#0a1628] flex items-center justify-center p-4 md:p-8 mt:64">
+      <Card className="w-full  bg-gray-200/30 backdrop-blur-sm  shadow-xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-8">
           SPONSORS
         </h2>
@@ -66,6 +66,6 @@ export default function Sponsors() {
           ))}
         </Marquee>
       </Card>
-    </div>
+    </section>
   )
 }

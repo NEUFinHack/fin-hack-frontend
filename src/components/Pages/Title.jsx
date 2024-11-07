@@ -1,7 +1,13 @@
 'use client'
+import { useNavigate } from 'react-router-dom';
 
 import { useEffect, useState } from 'react'
 export default function Title() {
+  const navigate = useNavigate();
+
+  const goToPortal = () => {
+      navigate('/portal');
+  };
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -42,7 +48,7 @@ export default function Title() {
         </div>
         <div className="hidden md:flex items-center space-x-8">
           <a href="#about" className="text-white hover:text-[#c5f82a] transition-colors">
-            Overview
+            About
           </a>
           <a href="#tracks" className="text-white hover:text-[#c5f82a] transition-colors">
             Tracks
@@ -57,7 +63,7 @@ export default function Title() {
             Sponsors
           </a>
         </div>
-        <button className="bg-[#c5f82a] text-[#0a1628] hover:bg-[#d4ff3a] font-semibold px-8 py-2 rounded-md">
+        <button onClick={goToPortal} className="bg-[#c5f82a] text-[#0a1628] hover:bg-[#d4ff3a] font-semibold px-8 py-2 rounded-md">
           Apply
         </button>
       </nav>
@@ -68,29 +74,29 @@ export default function Title() {
         <p className="text-2xl md:text-4xl text-[#c5f82a] mb-20">01.16 - 01.17</p>
 
         {/* Countdown Timer */}
-        <div className="w-full max-w-4xl">
+        <div className="w-8/12 max-w-4xl">
           <h2 className="text-2xl md:text-4xl text-white mb-8">MARKET OPENS IN</h2>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-16">
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-6 rounded-lg">
+              <div className="bg-white/90 w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.days}</span>
               </div>
               <span className="text-white mt-2">DAYS</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-6 rounded-lg">
+              <div className="bg-white/90 w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.hours}</span>
               </div>
               <span className="text-white mt-2">HOURS</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-6 rounded-lg">
+              <div className="bg-white/90 w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.minutes}</span>
               </div>
               <span className="text-white mt-2">MINUTES</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-6 rounded-lg">
+              <div className="bg-white/90 w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.seconds}</span>
               </div>
               <span className="text-white mt-2">SECONDS</span>

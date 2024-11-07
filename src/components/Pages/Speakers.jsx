@@ -34,7 +34,7 @@ const speakers = [
 export default function Speakers() {
   return (
 
-    <div className="min-h-screen bg-[#0a1628] relative overflow-hidden">
+    <div id="speakers" className="min-h-screen bg-[#0a1628] relative overflow-hidden">
        {/* Background Pattern */}
        <div className="absolute inset-0">
             <div className="absolute inset-0">
@@ -53,7 +53,9 @@ export default function Speakers() {
               <div className="absolute top-2/3 left-1/4 w-1/4 h-32 bg-white/5" />
             </div>
           </div>
-      <div className="relative bg-white/40 backdrop-blur-md rounded-lg p-12 max-w-2xl mx-auto mt-48 mb-64">
+
+          
+      <section id="speakers" className="relative bg-white/40 backdrop-blur-md rounded-lg p-12 max-w-2xl mx-auto mt-48 mb-64">
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">SPEAKERS</h1>
         <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
           {speakers.map((speaker) => (
@@ -80,7 +82,7 @@ export default function Speakers() {
             </Card>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   )
 }
