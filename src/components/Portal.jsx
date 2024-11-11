@@ -184,15 +184,23 @@ export default function HackathonForm() {
                 <label htmlFor="graduationYear" className="block text-sm font-medium text-gray-300">
                   Graduation Year
                 </label>
-                <input
-                  type="text"
-                  id="graduationYear"
-                  name="graduationYear"
-                  value={formData.graduationYear}
+                <select
+                  id="race"
+                  name="race"
+                  value={formData.race}
                   onChange={handleInputChange}
                   required
                   className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
-                />
+                >
+                  <option value="">Select Year</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="other">Other</option>
+                </select>
                 {errors.graduationYear && <p className="mt-1 text-sm text-red-500">{errors.graduationYear}</p>}
               </div>
             </div>

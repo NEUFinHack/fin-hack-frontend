@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Navbar from '../NavBar'
+
 export default function Title() {
 
   

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import disrupt from '../assets/disrupt.svg'
 
 
 export default function Navbar() {
@@ -11,10 +12,7 @@ export default function Navbar() {
     <div className="bg-[#0a1628]">
     <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
             <div className="flex items-center">
-              <div className="text-3xl font-bold">
-                <span className="text-blue-400">i</span>
-                <span className="text-[#c5f82a]">D</span>
-              </div>
+              <img className= "ml-0.5" src={disrupt} width="50" height= "50" alt="Logo" />
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#about" className="text-white hover:text-[#c5f82a] transition-colors">
