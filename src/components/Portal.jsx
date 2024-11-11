@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 
 export default function HackathonForm() {
   const [formData, setFormData] = useState({
@@ -19,6 +19,26 @@ export default function HackathonForm() {
   });
 
   const [errors, setErrors] = useState({});
+
+  const [universities, setUniversities] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUniversities = async () => {
+      try {
+        const response = await fetch('http://universities.hipolabs.com/search?country=United States');
+        const data = await response.json();
+        setUniversities(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching universities:', error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchUniversities();
+  }, []);
+
 
   const handleInputChange = (event) => {
     const { name, value, type, files } = event.target;
@@ -121,15 +141,25 @@ export default function HackathonForm() {
                 <label htmlFor="university" className="block text-sm font-medium text-gray-300">
                   University
                 </label>
-                <input
-                  type="text"
+                <select
                   id="university"
                   name="university"
                   value={formData.university}
                   onChange={handleInputChange}
                   required
                   className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
-                />
+                >
+                  <option value="">Select a university</option>
+                  {isLoading ? (
+                    <option value="" disabled>Loading universities...</option>
+                  ) : (
+                    universities.map((uni, index) => (
+                      <option key={index} value={uni.name}>
+                        {uni.name}
+                      </option>
+                    ))
+                  )}
+                </select>
                 {errors.university && <p className="mt-1 text-sm text-red-500">{errors.university}</p>}
               </div>
             </div>
@@ -321,10 +351,7 @@ export default function HackathonForm() {
               </div>
             </div>
 
-            <button
-              type="submit"
-              className="w-full rounded-md bg-[#9FEF00] px-4 py-2 font-medium text-gray-900 hover:bg-[#87C43C] transition-colors duration-300"
-            >
+            <button type="submit" className="w-full rounded-md bg-[#9FEF00] px-4 py-2 font-medium text-gray-900 hover:bg-[#87C43C] transition-colors duration-300">
               Submit Application
             </button>
           </form>
