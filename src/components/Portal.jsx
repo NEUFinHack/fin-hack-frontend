@@ -149,7 +149,7 @@ export default function HackathonForm() {
                   required
                   className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
                 >
-                  <option value="">Select a university</option>
+                <option value="">Select a university</option>
                   {isLoading ? (
                     <option value="" disabled>Loading universities...</option>
                   ) : (
