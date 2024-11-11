@@ -1,26 +1,42 @@
-// import { Home } from 'lucide-react'
+import { useNavigate } from 'react-router-dom';
 
-// import Disrupt from '../assets/disrupt.svg'
+
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const goToPortal = () => {
+      navigate('/portal');
+  };
   return (
-    <nav className="bg-white shadow-lg">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <a href="#" className="flex items-center">
-              {/* <Disrupt className="h-8 w-8 text-blue-500" /> */}
-              <span className="ml-2 text-xl font-semibold text-gray-800">MyApp</span>
-            </a>
-          </div>
-          <div className="hidden sm:flex space-x-4">
-            <a href="#about" className="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">About</a>
-            <a href="#tracks" className="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Tracks</a>
-            <a href="#faq" className="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">FAQ</a>
-            <a href="#speakers" className="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Speakers</a>
-            <a href="#sponsors" className="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">Sponsors</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <div className="bg-[#0a1628]">
+    <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
+            <div className="flex items-center">
+              <div className="text-3xl font-bold">
+                <span className="text-blue-400">i</span>
+                <span className="text-[#c5f82a]">D</span>
+              </div>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#about" className="text-white hover:text-[#c5f82a] transition-colors">
+                About
+              </a>
+              <a href="#tracks" className="text-white hover:text-[#c5f82a] transition-colors">
+                Tracks
+              </a>
+              <a href="#speakers" className="text-white hover:text-[#c5f82a] transition-colors">
+                Speakers
+              </a>
+              <a href="#faq" className="text-white hover:text-[#c5f82a] transition-colors">
+                FAQ
+              </a>
+              <a href="#sponsors" className="text-white hover:text-[#c5f82a] transition-colors">
+                Sponsors
+              </a>
+            </div>
+            <button onClick={goToPortal} className="bg-[#c5f82a] text-[#0a1628] hover:bg-[#d4ff3a] font-semibold px-8 py-2 rounded-md">
+              Apply
+            </button>
+          </nav>
+    </div>
   )
 }
