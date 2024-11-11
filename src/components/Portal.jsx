@@ -79,13 +79,14 @@ export default function HackathonForm() {
 
   return (
     <div className="min-h-screen bg-[#0a1628] p-6 text-white">
+
       <div className="mx-auto max-w-3xl mt-20 mb-32">
         <div className="mb-8 flex items-center justify-between">
           <h1 className="text-4xl font-bold">Application Form</h1>
           <span className="text-[#9FEF00]">In Progress</span>
         </div>
 
-        <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6">
+        <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6 ">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
