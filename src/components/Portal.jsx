@@ -1,6 +1,10 @@
 import  { useState, useEffect } from 'react';
+import { isTokenExpired } from '../api/auth';
+import { useNavigate } from 'react-router-dom';
+import { createUser, getUserByEmail, getResume, updateUser, uploadResume } from '../api/user';
 
 export default function HackathonForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -19,9 +23,42 @@ export default function HackathonForm() {
   });
 
   const [errors, setErrors] = useState({});
-
   const [universities, setUniversities] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const checkUserLogin = async () => {
+      if (isTokenExpired()) {
+        alert("Your session has expired. Please log in again.");
+  
+        setTimeout(() => {
+          navigate('/login');
+        }, 2000); 
+      }
+    }
+    
+    const getCurrentUser = async () => {
+      try {
+        const response = getUserByEmail();
+        setFormData(response.data);
+      } catch (error) {
+        if (error.response) {
+          if (error.response.status === 404) {
+            try {
+              const createResponse = await createUser(); 
+              setFormData(createResponse.data.user); 
+            } catch (createError) {
+              console.error('Error creating user:', createError);
+            }
+          } 
+        }
+      }
+    }
+
+    checkUserLogin();
+    getCurrentUser();
+
+  }, [])
 
   useEffect(() => {
     const fetchUniversities = async () => {
@@ -67,11 +104,12 @@ export default function HackathonForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (validateForm()) {
       console.log('Form submitted:', formData);
       // Here you would typically send the data to your server
+      await uploadResume(formData.resume);
     } else {
       console.log('Form has errors');
     }
