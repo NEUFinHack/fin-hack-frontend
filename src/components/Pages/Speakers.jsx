@@ -55,7 +55,7 @@ export default function Speakers() {
           </div>
 
           
-      <section id="speakers" className="relative bg-white/40 backdrop-blur-md rounded-lg p-12 max-w-2xl mx-auto mt-48 mb-64">
+      <section id="speakers" className="relative bg-white/60 backdrop-blur-md rounded-lg p-12 max-w-2xl mx-auto mt-48 mb-64">
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">SPEAKERS</h1>
         <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
           {speakers.map((speaker) => (

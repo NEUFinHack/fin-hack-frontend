@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import disrupt from '../assets/disrupt.svg'
 
-
 export default function Navbar() {
   const navigate = useNavigate();
 
   const goToPortal = () => {
-      navigate('/portal');
+      navigate('/login');
   };
   return (
     <div className="bg-[#0a1628]">

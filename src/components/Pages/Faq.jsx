@@ -84,7 +84,7 @@ export default function Faq() {
           <div className="absolute inset-2 bg-white/20 backdrop-blur-sm rounded-lg" />
           
           {/* Inner glass card */}
-          <div className="relative bg-white/30 backdrop-blur-md rounded-lg p-8 md:p-12">
+          <div className="relative bg-white/60 backdrop-blur-md rounded-lg p-8 md:p-12">
             <h1 className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-8 text-center">
               FAQ
             </h1>
