@@ -19,7 +19,7 @@ export default function HackathonForm() {
 
   useEffect(() => {
     const checkUserLogin = async () => {
-      isTokenExpired(navigate);
+      await isTokenExpired(navigate);
     }
 
     const getCurrentUser = async () => {
