@@ -1,13 +1,10 @@
 import axiosInstance from './axios';
 
-export const isTokenExpired = () => {
-    axiosInstance.post('/api/auth/validate_token')
-      .then(response => {
-        return false;
-      })
-      .catch(error => {
-        localStorage.removeItem('authToken');
-        return true;
-      });
+export const isTokenExpired = async (navigate) => {
+  axiosInstance.get('/api/auth/validate_token')
+  .catch(() => {
+    alert("Session Expired. Please Login Again.");
+    navigate('/login');
+  });
 };
   

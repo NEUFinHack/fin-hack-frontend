@@ -4,12 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
-    const onsSuccess = (message) => {
-        console.log(message);
+    const onSuccess = (message) => {
         window.localStorage.setItem('authToken', message.credential);
         navigate('/portal');
     }
-
 
     return(
         <div className="min-h-screen bg-[#0a1628] relative overflow-hidden">
@@ -45,7 +43,7 @@ const Login = () => {
                     LOGIN
                   </h1> 
                   <GoogleLogin
-                  onSuccess={onsSuccess}/>
+                  onSuccess={onSuccess}/>
                 </div>
               </div>
             </div>
