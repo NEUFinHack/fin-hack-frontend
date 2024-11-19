@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('authToken'); // Assuming token is stored in localStorage
+    const token = localStorage.getItem('authToken');
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
@@ -32,4 +32,4 @@ axiosInstance.interceptors.request.use(
 //     }
 //   );
 
-// export default axiosInstance;
+export default axiosInstance;
