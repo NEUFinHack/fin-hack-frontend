@@ -1,7 +1,6 @@
 import  { useState, useEffect } from 'react';
 import { isTokenExpired } from '../api/auth';
 import { useNavigate } from 'react-router-dom';
-import { createUser, getUserByEmail, getResume, updateUser, uploadResume } from '../api/user';
 
 export default function HackathonForm() {
   const navigate = useNavigate();
