@@ -8,7 +8,7 @@ export default function Navbar() {
       navigate('/login');
   };
   return (
-    <div className="bg-[#0a1628]">
+    <div className="">
     <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
             <div className="flex items-center">
               <img className= "ml-0.5" src={disrupt} width="50" height= "50" alt="Logo" />
