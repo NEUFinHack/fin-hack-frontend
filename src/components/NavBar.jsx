@@ -1,12 +1,14 @@
-import { useNavigate } from 'react-router-dom';
-import disrupt from '../assets/disrupt.svg'
+import { useState } from 'react';
+import disrupt from '../assets/disrupt.svg';
+import LoginModal from './Auth/loginModal';
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const goToPortal = () => {
-      navigate('/login');
-  };
+  // Functions to control modal visibility
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <div className="">
     <nav className="flex items-center justify-between px-6 py-4 lg:px-12">
@@ -30,10 +32,11 @@ export default function Navbar() {
                 Sponsors
               </a>
             </div>
-            <button onClick={goToPortal} className="bg-[#c5f82a] text-[#0a1628] hover:bg-[#d4ff3a] font-semibold px-8 py-2 rounded-md">
+            <button onClick={openModal} className="bg-[#c5f82a] text-[#0a1628] hover:bg-[#d4ff3a] font-semibold px-8 py-2 rounded-md">
               Apply
             </button>
           </nav>
+          {isModalOpen && <LoginModal isOpen={isModalOpen} closeModal={closeModal}/>}
     </div>
   )
 }
