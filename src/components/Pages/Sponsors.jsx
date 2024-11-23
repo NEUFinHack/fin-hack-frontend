@@ -8,32 +8,32 @@ const sponsors = [
   {
     id: 1,
     name: "IRT",
-    logo: "/src/assets/HRT.png",
+    logo: "/assets/HRT.png",
   },
   {
     id: 2,
     name: "Fidelity Investments",
-    logo: "/src/assets/Fidelity.png",
+    logo: "/assets/Fidelity.png",
   },
   {
     id: 3,
     name: "JPMorgan Chase & Co.",
-    logo: "/src/assets/JP Morgan Chase Logo.png",
+    logo: "/assets/JP Morgan Chase Logo.png",
   },
   {
     id: 4,
     name: "Google",
-    logo: "/src/assets/Google.jpg",
+    logo: "/assets/Google.jpg",
   },
   {
     id: 5,
     name: "Microsoft",
-    logo: "/src/assets/microsoft.png",
+    logo: "/assets/microsoft.png",
   },
   {
     id: 6,
     name: "Apple",
-    logo: "/src/assets/apple.png",
+    logo: "/assets/apple.png",
   }
 ]
 
