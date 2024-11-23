@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getUserByEmail, createUser, getResume } from '../api/user';
 import { isTokenExpired } from '../api/auth';
+// import universitiesData from '../assets/universities.json';
 import axios from 'axios';
 
 // Custom hook for handling authentication and user data
@@ -78,23 +79,15 @@ export const useUniversities = () => {
     const fetchUniversities = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(
-          'http://universities.hipolabs.com/search?country=united%20states',
-          {
-            signal: controller.signal
-          }
-        );
         
         if (!isMounted) return;
-        
-        setUniversities(response.data);
+        const data = await import('../assets/universities.json'); // Dynamic import
+        setUniversities(data.default);
       } catch (error) {
         if (error.name === 'AbortError') {
           return;
         }
-        
         if (!isMounted) return;
-        
         setError('Failed to fetch universities');
         console.error('Error fetching universities:', error);
       } finally {
