@@ -1,28 +1,22 @@
 export default function Tracks() {
   const tracks = [
     {
-      name: "Track one",
-      description: "short description of what track is about",
-      mainNumber: "151.01",
-      subNumber: "181.45"
+      name: "Blockchain",
+      description: "Explore decentralized technologies and build secure, transparent solutions for real-world challenges.",
+      mainNumber: "88.09",
+      subNumber: "2.15%"
     },
     {
-      name: "Track two",
-      description: "short description of what track is about",
+      name: "Artificial Inteligence",
+      description: " Leverage artificial intelligence to create innovative tools and solve complex problems with machine learning.",
       mainNumber: "151.01",
-      subNumber: "181.45"
+      subNumber: "1.72%"
     },
     {
-      name: "Track three",
-      description: "short description of what track is about",
-      mainNumber: "151.01",
-      subNumber: "181.45"
-    },
-    {
-      name: "Track four",
-      description: "short description of what track is about",
-      mainNumber: "151.01",
-      subNumber: "181.45"
+      name: "Web/App Dev",
+      description: "Design and develop dynamic web or mobile applications to enhance user experience and productivity.",
+      mainNumber: "203.36",
+      subNumber: "4.23%"
     }
   ]
 
