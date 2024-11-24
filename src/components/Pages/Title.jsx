@@ -34,7 +34,7 @@ export default function Title() {
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
-      <div className="bg-cover bg-center  w-screen min-h-screen bg-no-repeat"  style={{ backgroundImage: `url(src/assets/background.png) `}}>
+      <div className="bg-cover bg-center  w-screen min-h-screen bg-no-repeat"  style={{ backgroundImage: '/assets/background.png'}}>
 
       {/* Navigation */}
       <Navbar/>
