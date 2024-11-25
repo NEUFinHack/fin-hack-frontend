@@ -5,6 +5,8 @@ import Faq from "./Pages/Faq";
 import Speakers from "./Pages/Speakers";
 import Sponsors from "./Pages/Sponsors";
 import Title from "./Pages/Title";
+import Footer from "./Pages/Footer";
+
 function Home() {
   return (
     <div>
@@ -14,6 +16,7 @@ function Home() {
          <Faq id="#faq"/>
          <Speakers id="#speakers"/>
          <Sponsors id="#sponsors"/>
+         <Footer/>
     </div>
     
 );

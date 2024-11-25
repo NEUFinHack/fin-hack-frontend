@@ -13,5 +13,6 @@ export default function Sponsors() {
         <h4 className='text-center p-16'>Coming Soon</h4>
       </Card>
     </section>
+    
   )
 }
