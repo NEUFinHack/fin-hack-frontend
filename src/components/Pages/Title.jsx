@@ -14,7 +14,7 @@ export default function Title() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const eventDate = new Date('2025-01-26T00:00:00')
+      const eventDate = new Date('2025-01-18T00:00:00')
       const now = new Date()
       const difference = eventDate.getTime() - now.getTime()
 
@@ -51,25 +51,25 @@ export default function Title() {
           
           <div className="grid grid-cols-4 gap-16">
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-12 rounded-lg">
+              <div className="bg-white w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.days}</span>
               </div>
               <span className="text-white mt-2">DAYS</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-12 rounded-lg">
+              <div className="bg-white w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.hours}</span>
               </div>
               <span className="text-white mt-2">HOURS</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-12 rounded-lg">
+              <div className="bg-white w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.minutes}</span>
               </div>
               <span className="text-white mt-2">MINUTES</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="bg-white/90 w-full py-12 rounded-lg">
+              <div className="bg-white w-full py-12 rounded-lg">
                 <span className="text-3xl md:text-5xl font-bold text-[#0a1628]">{timeLeft.seconds}</span>
               </div>
               <span className="text-white mt-2">SECONDS</span>
