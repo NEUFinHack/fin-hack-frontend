@@ -144,6 +144,7 @@ export default function HackathonForm() {
       <div className="mx-auto max-w-3xl mt-20 mb-32">
         <div className="mb-8 flex items-center justify-between">
           <h1 className="text-4xl font-bold">Application Form</h1>
+
           <div className="flex items-center">
             <span className="text-green-400 mr-2">
               {formData.isSubmitted ? 'Submitted' : 'In Progress'}
@@ -157,6 +158,7 @@ export default function HackathonForm() {
 
         {!formData.isSubmitted ? (
           <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6 ">
+            <h3>Application due 12/20/2024 11:59 PM PST</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>

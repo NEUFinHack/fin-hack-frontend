@@ -43,7 +43,7 @@ export default function Title() {
       {/* Main Content */}
       <main className="flex flex-col items-center justify-center px-4 text-center mt-32">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 bg-[#0a1628] p-2 rounded-lg">FINHACK 2024</h1>
-        <p className="text-2xl md:text-4xl text-[#c5f82a] mb-20 bg-[#0a1628] p-1 rounded-lg ">01.16 - 01.17</p>
+        <p className="text-2xl md:text-4xl text-[#c5f82a] mb-20 bg-[#0a1628] p-1 rounded-lg ">01.18 - 01.19</p>
 
         <h2 className="text-2xl md:text-4xl text-white mb-8 bg-[#0a1628] p-2 rounded-lg">MARKET OPENS IN</h2>
         {/* Countdown Timer */}
