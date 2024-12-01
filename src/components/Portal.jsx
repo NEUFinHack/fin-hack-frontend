@@ -100,8 +100,8 @@ export default function HackathonForm() {
     event.preventDefault();
     if (validateForm()) {
       try {
-        await updateUser({ ...formData, isSubmitted: true });
-        setFormData(prevData => ({ ...prevData, isSubmitted: true }));
+        await updateUser({ ...formData, submitted: true });
+        setFormData(prevData => ({ ...prevData, submitted: true }));
       } catch (error) {
         console.error('Error submitting form:', error);
         alert('An error occurred while submitting the form. Please try again.');
@@ -155,7 +155,7 @@ export default function HackathonForm() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between space-y-2 sm:space-y-0">
             <div className="flex items-center">
               <span className="text-green-400 mr-2">
-                {formData.isSubmitted ? 'Submitted' : 'In Progress'}
+                {formData.submitted ? 'Submitted' : 'In Progress'}
               </span>
               {!formData.submitted && isSaving && (
                 <Loader2 className="animate-spin h-4 w-4 text-green-400" />
@@ -175,7 +175,7 @@ export default function HackathonForm() {
           </div>
         </div>
 
-        {!formData.isSubmitted ? (
+        {!formData.submitted ? (
           <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6 ">
             <h3 className='text-sm font-medium text-gray-300'>Application due 12/20/2024 11:59 PM PST</h3>
             <p></p>
@@ -216,19 +216,19 @@ export default function HackathonForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-300">
+                  <label htmlFor="phone_number" className="block text-sm font-medium text-gray-300">
                     Phone Number
                   </label>
                   <input
                     type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone || ''}
+                    id="phone_number"
+                    name="phone_number"
+                    value={formData.phone_number || ''}
                     onChange={handleInputChange}
                     required
                     className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   />
-                  {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
+                  {errors.phone_number && <p className="mt-1 text-sm text-red-500">{errors.phone_number}</p>}
                 </div>
                 <div>
                   <label htmlFor="university" className="block text-sm font-medium text-gray-300">
@@ -295,13 +295,13 @@ export default function HackathonForm() {
               </div>
 
               <div>
-                <label htmlFor="isOver18" className="block text-sm font-medium text-gray-300">
+                <label htmlFor="over_18" className="block text-sm font-medium text-gray-300">
                   Are you over 18 on the hackathon date?
                 </label>
                 <select
-                  id="isOver18"
-                  name="isOver18"
-                  value={formData.isOver18 || ''}
+                  id="over_18"
+                  name="over_18"
+                  value={formData.over_18 || ''}
                   onChange={handleInputChange}
                   required
                   className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
@@ -310,7 +310,7 @@ export default function HackathonForm() {
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
-                {errors.isOver18 && <p className="mt-1 text-sm text-red-500">{errors.isOver18}</p>}
+                {errors.over_18 && <p className="mt-1 text-sm text-red-500">{errors.over_18}</p>}
               </div>
 
               <div>
@@ -409,13 +409,13 @@ export default function HackathonForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="tshirtSize" className="block text-sm font-medium text-gray-300">
+                  <label htmlFor="tshirt" className="block text-sm font-medium text-gray-300">
                     T-shirt Size
                   </label>
                   <select
-                    id="tshirtSize"
-                    name="tshirtSize"
-                    value={formData.tshirtSize || ''}
+                    id="tshirt"
+                    name="tshirt"
+                    value={formData.tshirt || ''}
                     onChange={handleInputChange}
                     required
                     className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
@@ -426,7 +426,7 @@ export default function HackathonForm() {
                     <option value="L">L</option>
                     <option value="XL">XL</option>
                   </select>
-                  {errors.tshirtSize && <p className="mt-1 text-sm text-red-500">{errors.tshirtSize}</p>}
+                  {errors.tshirt && <p className="mt-1 text-sm text-red-500">{errors.tshirt}</p>}
                 </div>
                 <div>
                   <label htmlFor="gender" className="block text-sm font-medium text-gray-300">
@@ -442,9 +442,9 @@ export default function HackathonForm() {
                   >
                     <option value="">Select gender</option>
                     <option value="woman">Woman</option>
-                    <option value="man">Man</option>
+                    <option value="men">Man</option>
                     <option value="non-binary">Non-binary</option>
-                    <option value="prefer-not-to-say">Prefer not to say</option>
+                    <option value="prefer not to say">Prefer not to say</option>
                   </select>
                   {errors.gender && <p className="mt-1 text-sm text-red-500">{errors.gender}</p>}
                 </div>
