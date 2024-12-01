@@ -158,7 +158,8 @@ export default function HackathonForm() {
 
         {!formData.isSubmitted ? (
           <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6 ">
-            <h3>Application due 12/20/2024 11:59 PM PST</h3>
+            <h3 className='text-sm font-medium text-gray-300'>Application due 12/20/2024 11:59 PM PST</h3>
+            <p></p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
