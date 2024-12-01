@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { getResume, updateUser, uploadResume, removeResume } from '../api/user';
 import { debounce } from 'lodash';
 import { Loader2 } from 'lucide-react'
+import { useNavigate } from 'react-router-dom';
 import { useAuthAndUserData, useUniversities } from '../hooks/onLoadHooks'; // Adjust path as needed
 
 export default function HackathonForm() {
@@ -23,6 +24,7 @@ export default function HackathonForm() {
   const [errors, setErrors] = useState({});
   const [isSaving, setIsSaving] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const navigate = useNavigate();
 
   // Debounced update handler remains the same
   const debouncedUpdateUser = useCallback(
@@ -109,6 +111,11 @@ export default function HackathonForm() {
     }
   };
 
+  const signOut = () => {
+    window.localStorage.removeItem("authToken");
+    navigate('/');
+  }
+
   // Handle loading states
   if (userLoading || uniLoading) {
     return (
@@ -143,16 +150,28 @@ export default function HackathonForm() {
     <div className="min-h-screen bg-gray-900 p-6 text-white">
       <div className="mx-auto max-w-3xl mt-20 mb-32">
         <div className="mb-8 flex items-center justify-between">
-          <h1 className="text-4xl font-bold">Application Form</h1>
+          <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold">Application Form</h1>
 
-          <div className="flex items-center">
-            <span className="text-green-400 mr-2">
-              {formData.isSubmitted ? 'Submitted' : 'In Progress'}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between space-y-2 sm:space-y-0">
+            <div className="flex items-center">
+              <span className="text-green-400 mr-2">
+                {formData.isSubmitted ? 'Submitted' : 'In Progress'}
+              </span>
+              {!formData.submitted && isSaving && (
+                <Loader2 className="animate-spin h-4 w-4 text-green-400" />
+              )}
+            </div>
+
+            <span className="text-gray-300 ml-2">
+              {formData.google_email}
             </span>
-            {!formData.submitted && isSaving && (
-              <Loader2 className="animate-spin h-4 w-4 text-green-400" />
-            )}
-            <span className="text-gray-300 ml-2">{formData.google_email}</span>
+
+            <button
+              onClick={() => signOut()}
+              className="ml-0 sm:ml-4 px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto"
+            >
+              Log Out
+            </button>
           </div>
         </div>
 
@@ -174,7 +193,7 @@ export default function HackathonForm() {
                     onChange={handleInputChange}
                     required
                     placeholder="johndoe@university.edu"
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   />
                   {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                 </div>
@@ -189,7 +208,7 @@ export default function HackathonForm() {
                     value={formData.name || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   />
                   {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                 </div>
@@ -207,7 +226,7 @@ export default function HackathonForm() {
                     value={formData.phone || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   />
                   {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
                 </div>
@@ -221,7 +240,7 @@ export default function HackathonForm() {
                     value={formData.university || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   >
                     <option value="">Select a university</option>
                     {universities.map((uni, index) => (
@@ -246,7 +265,7 @@ export default function HackathonForm() {
                     value={formData.major || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   />
                   {errors.major && <p className="mt-1 text-sm text-red-500">{errors.major}</p>}
                 </div>
@@ -260,7 +279,7 @@ export default function HackathonForm() {
                     value={formData.graduation_year || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
                   >
                     <option value="">Select Year</option>
                     <option value="2024">2024</option>
@@ -285,7 +304,7 @@ export default function HackathonForm() {
                   value={formData.isOver18 || ''}
                   onChange={handleInputChange}
                   required
-                  className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                  className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                 >
                   <option value="">Select an option</option>
                   <option value="yes">Yes</option>
@@ -351,7 +370,7 @@ export default function HackathonForm() {
                   name="linkedin"
                   value={formData.linkedin || ''}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                  className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                 />
                 {errors.linkedin && <p className="mt-1 text-sm text-red-500">{errors.linkedin}</p>}
               </div>
@@ -384,7 +403,7 @@ export default function HackathonForm() {
                   rows="3"
                   value={formData.foodRestrictions || ''}
                   onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                  className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                 ></textarea>
               </div>
 
@@ -399,7 +418,7 @@ export default function HackathonForm() {
                     value={formData.tshirtSize || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   >
                     <option value="">Select size</option>
                     <option value="S">S</option>
@@ -419,7 +438,7 @@ export default function HackathonForm() {
                     value={formData.gender || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   >
                     <option value="">Select gender</option>
                     <option value="woman">Woman</option>
@@ -439,7 +458,7 @@ export default function HackathonForm() {
                     value={formData.race || ''}
                     onChange={handleInputChange}
                     required
-                    className="mt-1 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50"
+                    className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   >
                     <option value="">Select race</option>
                     <option value="american-indian-alaska-native">American Indian / Alaska Native</option>
