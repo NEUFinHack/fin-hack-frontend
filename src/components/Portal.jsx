@@ -461,13 +461,13 @@ export default function HackathonForm() {
                     className="mt-1 h-7 block w-full rounded-md bg-gray-800 border-gray-700 text-white shadow-sm focus:border-[#9FEF00] focus:ring focus:ring-[#9FEF00] focus:ring-opacity-50 pl-1"
                   >
                     <option value="">Select race</option>
-                    <option value="american-indian-alaska-native">American Indian / Alaska Native</option>
-                    <option value="native-hawaiian-pacific-islander">Native Hawaiian / Other Pacific Islander</option>
+                    <option value="american indian / alaska native">American Indian / Alaska Native</option>
+                    <option value="native hawaiian / other pacific islander">Native Hawaiian / Other Pacific Islander</option>
                     <option value="asian">Asian</option>
                     <option value="white">White</option>
-                    <option value="black-african-american">Black / African American</option>
-                    <option value="hispanic-latino">Hispanic / Latino</option>
-                    <option value="prefer-not-to-say">Prefer not to say</option>
+                    <option value="black / african american">Black / African American</option>
+                    <option value="hispanic / latino">Hispanic / Latino</option>
+                    <option value="prefer not to say">Prefer not to say</option>
                     <option value="other">Other</option>
                   </select>
                   {errors.race && <p className="mt-1 text-sm text-red-500">{errors.race}</p>}
