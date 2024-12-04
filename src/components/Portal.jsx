@@ -91,7 +91,16 @@ export default function HackathonForm() {
     let newErrors = {};
     if (!formData.school_email?.endsWith('.edu')) newErrors.email = 'Must be a valid .edu email address';
     if (formData.name?.length < 2) newErrors.name = 'Name must be at least 2 characters';
-    // ... rest of validation logic
+    if (formData.phone_number?.length < 10) newErrors.phone_number = 'Please enter a valid phone number';
+    if (formData.university?.length < 2) newErrors.university = 'University is required';
+    if (formData.major?.length < 2) newErrors.major = 'Major is required';
+    if (formData.graduation_year?.length !== 4) newErrors.graduation_year = 'Please enter a valid year';
+    if (!formData.over_18) newErrors.over_18 = 'Please select an option';
+    if (!formData.resume && !resumeFile) newErrors.resume = 'Resume is required';
+    if (formData.linkedin && !formData.linkedin.startsWith('https://linkedin.com/')) newErrors.linkedin = 'Please enter a valid LinkedIn URL';
+    if (!formData.tshirt) newErrors.tshirt = 'Please select a T-shirt size';
+    if (!formData.gender) newErrors.gender = 'Please select a gender';
+    if (!formData.race) newErrors.race = 'Please select a race';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
