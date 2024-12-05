@@ -5,12 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default function Faq() {
   const faqItems = [
     {
-      question: "What is FinHack?",
-      answer: "FinHack is a 24-hour hackathon focused on financial technology innovation where students from around the world collaborate to build cutting-edge projects.",
+      question: "What is FinHacks?",
+      answer: "FinHacks is a 24-hour hackathon focused on financial technology innovation where students from around the world collaborate to build cutting-edge projects.",
       status: "green"
     },
     {
-      question: "When and Where is FinHack?",
+      question: "When and Where is FinHacks?",
       answer: "The event will take place at Northeastern Boston Campus on January 18-19",
       status: "green"
     },
@@ -36,7 +36,7 @@ export default function Faq() {
     },
     {
       question: "When are applications due?",
-      answer: "12/20/2024  11:59 PM PST",
+      answer: "January 1st 2025, 11:59 PM PST",
       status: "green"
     },
     {
