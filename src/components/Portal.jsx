@@ -97,7 +97,7 @@ export default function HackathonForm() {
     if (formData.graduation_year?.length !== 4) newErrors.graduation_year = 'Please enter a valid year';
     if (!formData.over_18) newErrors.over_18 = 'Please select an option';
     if (!formData.resume && !resumeFile) newErrors.resume = 'Resume is required';
-    if (formData.linkedin && !formData.linkedin.startsWith('https://linkedin.com/')) newErrors.linkedin = 'Please enter a valid LinkedIn URL';
+    if (formData.linkedin && !formData.linkedin.startsWith('https://www.linkedin.com/')) newErrors.linkedin = 'Please enter a valid LinkedIn URL';
     if (!formData.tshirt) newErrors.tshirt = 'Please select a T-shirt size';
     if (!formData.gender) newErrors.gender = 'Please select a gender';
     if (!formData.race) newErrors.race = 'Please select a race';
