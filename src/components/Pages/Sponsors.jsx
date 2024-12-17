@@ -5,37 +5,37 @@ const sponsors = [
   {
     id: 1,
     name: "DMSB",
-    logo: "public/assets/DMSB N Logo Cropped.webp",
+    logo: "/assets/DMSB.webp",
     border: "border-[#cd7f32]",
   },
   {
     id: 2,
     name: "SVB",
-    logo: "public/assets/SVB.png",
+    logo: "/assets/SVB.png",
     border: "border-[#FFD700]",
   },
   {
     id: 3,
     name: "Google",
-    logo: "public/assets/Google.jpg",
+    logo: "/assets/Google.jpg",
     border: "border-[#cd7f32]",
   },
   {
     id: 4,
     name: "HRT",
-    logo: "public/assets/HRT.png",
+    logo: "/assets/HRT.png",
     border: "border-[#C0C0C0]",
   },
   {
     id: 5,
     name: "RedBull",
-    logo: "public/assets/redbull.png",
+    logo: "/assets/redbull.png",
     border: "border-[#cd7f32]",
   },
   {
     id: 6,
     name: "Percent",
-    logo: "public/assets/Percent.png",
+    logo: "/assets/Percent.png",
     border: "border-[#C0C0C0]",
   }
 
