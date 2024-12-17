@@ -33,7 +33,7 @@ function About() {
                     ABOUT
                   </h1>
                   <p className="text-lg md:text-xl text-[#0a1628] leading-relaxed">
-                  Welcome to FinHack, Disrupt’s inaugural hackathon! FinHack is a beginner-friendly event designed to 
+                  Welcome to FinHacks, Disrupt’s inaugural hackathons! FinHack is a beginner-friendly event designed to 
                   inspire innovative solutions in finance. 
                   Students of all backgrounds are welcome, with a special encouragement for finance and design students to join. 
                   Explore the future of financial innovation through creativity, collaboration, and learning!
