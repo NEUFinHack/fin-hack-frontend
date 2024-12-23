@@ -27,15 +27,21 @@ const sponsors = [
     border: "border-[#C0C0C0]",
   },
   {
-    id: 5,
-    name: "RedBull",
-    logo: "/assets/redbull.png",
-    border: "border-[#cd7f32]",
-  },
-  {
     id: 6,
     name: "Percent",
     logo: "/assets/Percent.png",
+    border: "border-[#C0C0C0]",
+  }, 
+  {
+    id: 7,
+    name: "FlatLogic",
+    logo: "/assets/FlatLogic.png",
+    border: "border-[#cd7f32]",
+  },
+  {
+    id: 8,
+    name: "Mosaic",
+    logo: "/assets/Mosaic.png",
     border: "border-[#C0C0C0]",
   }
 
