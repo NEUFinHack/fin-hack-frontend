@@ -7,42 +7,49 @@ const sponsors = [
     name: "DMSB",
     logo: "/assets/DMSB.webp",
     border: "border-[#cd7f32]",
+    url: "https://damore-mckim.northeastern.edu/"
   },
   {
     id: 2,
     name: "SVB",
     logo: "/assets/SVB.png",
     border: "border-[#FFD700]",
+    url:"https://www.svb.com/"
   },
   {
     id: 3,
     name: "Google",
     logo: "/assets/Google.jpg",
     border: "border-[#cd7f32]",
+    url: ""
   },
   {
     id: 4,
     name: "HRT",
     logo: "/assets/HRT.png",
     border: "border-[#C0C0C0]",
+    url: "https://www.hudsonrivertrading.com/"
   },
   {
     id: 6,
     name: "Percent",
     logo: "/assets/Percent.png",
     border: "border-[#C0C0C0]",
+    url: "https://percent.com/"
   }, 
   {
     id: 7,
     name: "FlatLogic",
     logo: "/assets/FlatLogic.png",
     border: "border-[#cd7f32]",
+    url: "https://flatlogic.com/"
   },
   {
     id: 8,
     name: "Mosaic",
     logo: "/assets/Mosaic.png",
     border: "border-[#C0C0C0]",
+    url: "https://mosaic.entrepreneurship.northeastern.edu/"
   }
 
 ]
@@ -60,8 +67,11 @@ export default function Sponsors() {
           className="py-4"
         >
           {sponsors.map((sponsor) => (
-            <div
+            <a
               key={sponsor.id}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`
                 mx-8 
                 bg-white 
@@ -79,6 +89,7 @@ export default function Sponsors() {
                 transition-transform 
                 duration-300 
                 ease-in-out
+                cursor-pointer
               `}
             >
               <img
@@ -88,7 +99,7 @@ export default function Sponsors() {
                 height={60}
                 className="object-contain"
               />
-            </div>
+            </a>
           ))}
         </Marquee>
       </Card>
