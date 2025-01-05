@@ -4,20 +4,32 @@ export default function Tracks() {
       name: "Blockchain",
       description: "Explore decentralized technologies and build secure, transparent solutions for real-world challenges.",
       mainNumber: "88.09",
-      subNumber: "2.15%"
+      subNumber: "4.21%"
     },
     {
       name: "Artificial Intelligence",
       description: "Leverage artificial intelligence to create innovative tools and solve complex problems with machine learning.",
       mainNumber: "151.01",
-      subNumber: "1.72%"
+      subNumber: "23.72%"
     },
     {
       name: "Web/App Dev",
       description: "Design and develop dynamic web or mobile applications to enhance user experience and productivity.",
-      mainNumber: "203.36",
-      subNumber: "4.23%"
-    }
+      mainNumber: "43.36",
+      subNumber: "1.72%"
+    },
+    {
+      name: "Best Diversity Hack",
+      description: "Awarded to teams with 50% or more members who identify as women or non-binary individuals.",
+      mainNumber: "125.64",
+      subNumber: "4.21%"
+    },
+    {
+      name: "Best Startup Potential",
+      description: "Awarded to the most viable and market-ready solution that shows potential for becoming a successful business venture.",
+      mainNumber: "67.15",
+      subNumber: "3.92%"
+    },
   ]
 
   return (
