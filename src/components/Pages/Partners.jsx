@@ -1,57 +1,51 @@
 'use client'
 import Marquee from 'react-fast-marquee'
 import Card from 'react-bootstrap/Card';
-const sponsors = [
+
+const partners = [
   {
     id: 1,
-    name: "DMSB",
-    logo: "/assets/DMSB.webp",
-    border: "border-[#cd7f32]",
-    url: "https://damore-mckim.northeastern.edu/"
+    name: "Sandbox",
+    logo: "/assets/sandbox.png",
+    border: "border-[#C0C0C0]",
+    url: ""
   },
   {
     id: 2,
-    name: "SVB",
-    logo: "/assets/SVB.png",
-    border: "border-[#FFD700]",
-    url:"https://www.svb.com/"
+    name: "Rev",
+    logo: "/assets/rev.jpeg",
+    border: "border-[#C0C0C0]",
+    url: ""
   },
   {
     id: 3,
-    name: "HRT",
-    logo: "/assets/HRT.png",
+    name: "Scout",
+    logo: "/assets/scout.png",
     border: "border-[#C0C0C0]",
-    url: "https://www.hudsonrivertrading.com/"
+    url:""
   },
   {
     id: 4,
-    name: "Percent",
-    logo: "/assets/Percent.png",
+    name: "Idea",
+    logo: "/assets/idea.jpeg",
     border: "border-[#C0C0C0]",
-    url: "https://percent.com/"
-  }, 
-  {
-    id: 5,
-    name: "FlatLogic",
-    logo: "/assets/FlatLogic.png",
-    border: "border-[#cd7f32]",
-    url: "https://flatlogic.com/"
+    url: ""
   },
   {
-    id: 6,
-    name: "Mosaic",
-    logo: "/assets/Mosaic.png",
+    id: 5,
+    name: "NEU BlockChain",
+    logo: "/assets/blockchain.png",
     border: "border-[#C0C0C0]",
-    url: "https://mosaic.entrepreneurship.northeastern.edu/"
+    url: ""
   }
 
 ]
-export default function Sponsors() {
+export default function Partners() {
   return (
-    <div id="sponsors" className="w-full bg-[#0a1628] flex items-center justify-center p-4 md:p-8">
+    <div  id="partners" className="w-full bg-[#0a1628] flex items-center justify-center p-4 md:p-8">
       <Card className="w-full bg-white/60 backdrop-blur-sm shadow-xl">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 mt-8 text-gray-800">
-          SPONSORS
+          PARTNERS
         </h2>
         <Marquee
           gradient={false}
@@ -59,7 +53,7 @@ export default function Sponsors() {
           pauseOnHover={true}
           className="py-4"
         >
-          {sponsors.map((sponsor) => (
+          {partners.map((sponsor) => (
             <a
               key={sponsor.id}
               href={sponsor.url}
@@ -74,8 +68,8 @@ export default function Sponsors() {
                 flex 
                 items-center 
                 justify-center 
-                min-w-[240px] 
-                h-[180px] 
+                min-w-[200] 
+                h-[200] 
                 border-4 
                 ${sponsor.border} 
                 hover:scale-105 
@@ -88,8 +82,8 @@ export default function Sponsors() {
               <img
                 src={sponsor.logo}
                 alt={`${sponsor.name} logo`}
-                width={200}
-                height={60}
+                width={150}
+                height={150}
                 className="object-contain"
               />
             </a>

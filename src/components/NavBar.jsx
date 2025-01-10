@@ -28,8 +28,11 @@ export default function Navbar() {
               <a href="#faq" className="text-white hover:text-[#c5f82a] transition-colors">
                 FAQ
               </a>
+              <a href="#partners" className="text-white hover:text-[#c5f82a] transition-colors">
+                Partners 
+              </a>
               <a href="#sponsors" className="text-white hover:text-[#c5f82a] transition-colors">
-                Sponsors
+                Sponsors 
               </a>
             </div>
             <button onClick={openModal} className="bg-[#c5f82a] text-[#0a1628] hover:bg-[#d4ff3a] font-semibold px-8 py-2 rounded-md">
