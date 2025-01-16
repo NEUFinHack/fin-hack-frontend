@@ -11,7 +11,7 @@ const speakers = [
   {
     id: 2,
     name: "Caleb Choy",
-    image: "",
+    image: "/assets/Speakers/caleb.jpeg",
     likedIn: "https://www.linkedin.com/in/caleb-choy-0b763620a/", // Added LinkedIn URL
   },
   {
@@ -74,13 +74,19 @@ const speakers = [
   {
     id: 13,
     name: "Mikhail Kalashnikov",
-    image: "",
+    image: "/assets/Speakers/Milkahi.jpg",
     linkedIn: "https://linkedin.com/in/mikkqu", // Added LinkedIn URL
   },
   {
     id: 14,
     name: "Mithilesh Ramaswamy ",
     image: "/assets/Speakers/Mith.png",
+    linkedIn: "https://www.linkedin.com/in/mitr/",
+  },
+  {
+    id: 15,
+    name: "Conlan Foulkes",
+    image: "/assets/Speakers/Conlan.jpg",
     linkedIn: "https://www.linkedin.com/in/mitr/",
   }
 ]
@@ -107,8 +113,8 @@ export default function Speakers() {
         </div>
       </div>
 
-      <section className="relative bg-white/60 backdrop-blur-md rounded-lg p-12 max-w-7xl mx-auto mt-48 mb-64">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-12">SPEAKERS</h1>
+      <section className="relative bg-white/60 backdrop-blur-md rounded-lg p-12 max-w-6xl mx-auto mt-48 mb-48">
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-12">JUDGES AND SPEAKERS</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {speakers.map((speaker) => (
             <Card key={speaker.id} className="bg-white/90 shadow-lg overflow-hidden">
@@ -128,8 +134,8 @@ export default function Speakers() {
                     <img
                       src={speaker.image || "/placeholder.svg"}
                       alt={`${speaker.name}'s profile`}
-                      width={100}
-                      height={100}
+                      width={170}
+                      height={170}
                       className=" object-cover"
                     />
                   </div>
