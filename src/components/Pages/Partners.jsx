@@ -8,35 +8,35 @@ const partners = [
     name: "Sandbox",
     logo: "/assets/sandbox.png",
     border: "border-[#C0C0C0]",
-    url: ""
+    url: "https://www.sandboxnu.com/"
   },
   {
     id: 2,
     name: "Rev",
     logo: "/assets/rev.jpeg",
     border: "border-[#C0C0C0]",
-    url: ""
+    url: "https://www.rev.school/"
   },
   {
     id: 3,
     name: "Scout",
     logo: "/assets/scout.png",
     border: "border-[#C0C0C0]",
-    url:""
+    url:"https://scout.camd.northeastern.edu/"
   },
   {
     id: 4,
     name: "Idea",
     logo: "/assets/idea.jpeg",
     border: "border-[#C0C0C0]",
-    url: ""
+    url: "https://www.ideaneu.com/"
   },
   {
     id: 5,
     name: "NEU BlockChain",
     logo: "/assets/blockchain.png",
     border: "border-[#C0C0C0]",
-    url: ""
+    url: "https://northeasternblockchain.xyz/"
   }
 
 ]
