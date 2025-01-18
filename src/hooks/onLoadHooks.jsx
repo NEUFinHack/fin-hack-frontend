@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getUserByEmail, createUser, getResume } from '../api/user';
 import { isTokenExpired } from '../api/auth';
-// import universitiesData from '../assets/universities.json';
-import axios from 'axios';
 
 // Custom hook for handling authentication and user data
 export const useAuthAndUserData = () => {

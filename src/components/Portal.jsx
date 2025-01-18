@@ -3,7 +3,7 @@ import { getResume, updateUser, uploadResume, removeResume } from '../api/user';
 import { debounce } from 'lodash';
 import { Loader2 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
-import { useAuthAndUserData, useUniversities } from '../hooks/onLoadHooks'; // Adjust path as needed
+import { useAuthAndUserData, useUniversities } from '../hooks/onLoadHooks';
 
 export default function HackathonForm() {
   const {
@@ -26,7 +26,7 @@ export default function HackathonForm() {
   const [isUploading, setIsUploading] = useState(false);
   const navigate = useNavigate();
 
-  // Debounced update handler remains the same
+  // Debounced update handler
   const debouncedUpdateUser = useCallback(
     debounce(async (data) => {
       try {
@@ -64,7 +64,7 @@ export default function HackathonForm() {
           resume: response.resume_id
         }));
         const resumeResponse = await getResume(response.resume_id);
-        setResumeFile(resumeResponse); // You might want to fetch the actual file using getResume here
+        setResumeFile(resumeResponse); 
       } catch {
         alert('Failed to upload resume. Please try again.');
       } finally {
@@ -86,7 +86,7 @@ export default function HackathonForm() {
     }
   };
 
-  // Form validation remains the same
+  // Form validation
   const validateForm = () => {
     let newErrors = {};
     if (!formData.school_email?.endsWith('.edu')) newErrors.email = 'Must be a valid .edu email address';
