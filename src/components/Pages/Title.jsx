@@ -14,7 +14,7 @@ export default function Title() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const eventDate = new Date('2025-01-18T00:00:00')
+      const eventDate = new Date('2025-01-18T10:00:00')
       const now = new Date()
       const difference = eventDate.getTime() - now.getTime()
 
