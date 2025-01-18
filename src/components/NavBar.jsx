@@ -28,6 +28,9 @@ export default function Navbar() {
               <a href="#faq" className="text-white hover:text-[#c5f82a] transition-colors">
                 FAQ
               </a>
+              <a href="#schedule" className="text-white hover:text-[#c5f82a] transition-colors">
+                Schedule
+              </a>
               <a href="#partners" className="text-white hover:text-[#c5f82a] transition-colors">
                 Partners 
               </a>
